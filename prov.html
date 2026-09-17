@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Посуда 15 — магазин посуды в Петропавловске</title>
+<meta name="description" content="Посуда 15 — розница и опт посуды и товаров для кухни в Петропавловске. Тарелки, кружки, кастрюли, сковороды, наборы для сервировки.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --porcelain:#F7F3EA;
+    --surface:#FFFFFF;
+    --surface-warm:#FBF7EF;
+    --ink:#26231D;
+    --ink-soft:#655F53;
+    --ink-faint:#8B8474;
+    --cobalt:#2C4A73;
+    --cobalt-deep:#1C3352;
+    --clay:#BD5B2C;
+    --clay-soft:#E9C6AE;
+    --line:#E3DACB;
+    --radius-s:6px;
+    --radius-m:14px;
+    --shadow: 0 1px 2px rgba(38,35,29,.05);
+    --maxw:1160px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--porcelain);
+    color:var(--ink);
+    font-family:'Manrope',sans-serif;
+    font-size:16px;
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+  img{max-width:100%;display:block;}
+  a{color:inherit;text-decoration:none;}
+  h1,h2,h3{
+    font-family:'Fraunces',serif;
+    font-weight:500;
+    margin:0;
+    color:var(--ink);
+    letter-spacing:-0.01em;
+  }
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px;}
+  section{padding:88px 0;}
+  @media(max-width:720px){ section{padding:56px 0;} .wrap{padding:0 20px;} }
+
+  /* focus visibility */
+  a:focus-visible,button:focus-visible{outline:2px solid var(--cobalt);outline-offset:3px;}
+  @media (prefers-reduced-motion: reduce){
+    *{animation-duration:.001ms !important; transition-duration:.001ms !important;}
+    html{scroll-behavior:auto;}
+  }
+
+  /* ---------- header ---------- */
+  header{
+    position:sticky;top:0;z-index:50;
+    background:rgba(247,243,234,.92);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:18px 0;}
+  .logo{display:flex;align-items:center;gap:10px;font-family:'Fraunces',serif;font-size:22px;font-weight:600;color:var(--cobalt-deep);}
+  .logo .mark{width:30px;height:30px;flex:none;}
+  .navlinks{display:flex;gap:34px;font-size:15px;font-weight:500;color:var(--ink-soft);}
+  .navlinks a{padding:6px 0;border-bottom:1px solid transparent;transition:color .15s, border-color .15s;}
+  .navlinks a:hover{color:var(--cobalt-deep);border-color:var(--cobalt-deep);}
+  .navcta{display:flex;align-items:center;gap:14px;}
+  .phone-link{font-weight:700;font-size:15px;color:var(--ink);white-space:nowrap;}
+  .btn{
+    display:inline-flex;align-items:center;gap:8px;
+    padding:12px 22px;border-radius:999px;font-weight:700;font-size:14.5px;
+    border:1px solid transparent;cursor:pointer;transition:transform .15s ease, background .15s ease, border-color .15s ease;
+    white-space:nowrap;
+  }
+  .btn:hover{transform:translateY(-1px);}
+  .btn-primary{background:var(--cobalt-deep);color:#fff;}
+  .btn-primary:hover{background:var(--cobalt);}
+  .btn-ghost{background:transparent;border-color:var(--ink);color:var(--ink);}
+  .btn-ghost:hover{border-color:var(--cobalt-deep);color:var(--cobalt-deep);}
+  .btn-clay{background:var(--clay);color:#fff;}
+  .btn-clay:hover{background:#A64F26;}
+  .burger{display:none;background:none;border:none;padding:6px;cursor:pointer;}
+  .burger span{display:block;width:24px;height:2px;background:var(--ink);margin:5px 0;}
+  @media(max-width:860px){
+    .navlinks{display:none;}
+    .phone-link{display:none;}
+    .burger{display:block;}
+  }
+  .mobile-menu{display:none;flex-direction:column;gap:2px;padding:10px 0 18px;border-top:1px solid var(--line);}
+  .mobile-menu.open{display:flex;}
+  .mobile-menu a{padding:12px 4px;font-weight:600;border-bottom:1px solid var(--line);}
+
+  /* ---------- hero ---------- */
+  .hero{padding-top:70px;padding-bottom:70px;overflow:hidden;}
+  .hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center;}
+  @media(max-width:900px){ .hero .wrap{grid-template-columns:1fr;} }
+  .eyebrow-badge{
+    display:inline-flex;align-items:center;gap:8px;
+    background:var(--surface-warm);border:1px solid var(--line);
+    padding:7px 14px;border-radius:999px;font-size:13.5px;color:var(--ink-soft);font-weight:600;
+    margin-bottom:22px;
+  }
+  .eyebrow-badge b{color:var(--clay);font-family:'Fraunces',serif;font-size:15px;}
+  .hero h1{font-size:clamp(34px,4.6vw,54px);line-height:1.08;max-width:14ch;}
+  .hero p.lead{font-size:18px;color:var(--ink-soft);max-width:44ch;margin:22px 0 32px;}
+  .hero-ctas{display:flex;gap:14px;flex-wrap:wrap;}
+  .hero-meta{display:flex;gap:28px;margin-top:40px;flex-wrap:wrap;}
+  .hero-meta div{font-size:13.5px;color:var(--ink-faint);}
+  .hero-meta strong{display:block;font-family:'Fraunces',serif;font-size:24px;color:var(--ink);font-weight:600;}
+
+  .plate-scene{position:relative;height:420px;}
+  .plate{position:absolute;border-radius:50%;box-shadow:0 18px 40px -14px rgba(28,51,82,.35);}
+  .plate::after{content:'';position:absolute;inset:14%;border-radius:50%;border:1px solid rgba(255,255,255,.5);}
+  .plate.p1{width:300px;height:300px;left:0;top:30px;background:radial-gradient(circle at 32% 30%, #3E6493, var(--cobalt-deep) 72%);}
+  .plate.p2{width:190px;height:190px;left:210px;top:190px;background:radial-gradient(circle at 32% 30%, #E7996B, var(--clay) 75%);}
+  .plate.p3{width:130px;height:130px;left:60px;top:250px;background:radial-gradient(circle at 32% 30%, #fff, #EDE6D6 75%);box-shadow:0 10px 24px -10px rgba(28,51,82,.25);}
+  .plate.p3::after{border-color:rgba(28,51,82,.15);}
+  @media(max-width:900px){ .plate-scene{height:300px;margin-top:20px;} .plate.p1{width:230px;height:230px;} .plate.p2{width:150px;height:150px;left:170px;top:140px;} .plate.p3{width:100px;height:100px;left:40px;top:190px;} }
+
+  /* ---------- section headings ---------- */
+  .section-head{max-width:560px;margin-bottom:46px;}
+  .section-head h2{font-size:clamp(26px,3vw,36px);}
+  .section-head p{color:var(--ink-soft);margin-top:12px;font-size:16px;}
+  .section-tag{font-size:13.5px;font-weight:700;color:var(--clay);margin-bottom:10px;display:block;}
+
+  /* ---------- categories ---------- */
+  .cat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+  @media(max-width:860px){ .cat-grid{grid-template-columns:repeat(2,1fr);} }
+  @media(max-width:520px){ .cat-grid{grid-template-columns:1fr;} }
+  .cat-card{
+    background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-m);
+    padding:26px;cursor:pointer;transition:border-color .15s ease, background .15s ease;
+  }
+  .cat-card:hover{border-color:var(--cobalt);}
+  .cat-card.active{background:var(--cobalt-deep);border-color:var(--cobalt-deep);}
+  .cat-card.active h3, .cat-card.active p{color:#fff;}
+  .cat-card.active svg{stroke:#fff;}
+  .cat-card svg{width:34px;height:34px;stroke:var(--cobalt-deep);fill:none;stroke-width:1.4;margin-bottom:16px;}
+  .cat-card h3{font-size:18px;font-weight:600;margin-bottom:6px;}
+  .cat-card p{font-size:14px;color:var(--ink-faint);margin:0;}
+
+  /* ---------- products ---------- */
+  .prod-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:10px;}
+  @media(max-width:860px){ .prod-grid{grid-template-columns:repeat(2,1fr);} }
+  @media(max-width:560px){ .prod-grid{grid-template-columns:1fr;} }
+  .prod-card{
+    background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-m);
+    overflow:hidden;display:flex;flex-direction:column;transition:opacity .2s ease, transform .2s ease;
+  }
+  .prod-card[hidden]{display:none;}
+  .prod-visual{
+    height:180px;background:var(--surface-warm);display:flex;align-items:center;justify-content:center;
+    border-bottom:1px solid var(--line);
+  }
+  .prod-visual svg{width:78px;height:78px;stroke:var(--cobalt-deep);fill:none;stroke-width:1.2;}
+  .prod-body{padding:20px 22px 22px;display:flex;flex-direction:column;gap:10px;flex:1;}
+  .prod-cat{font-size:12px;font-weight:700;color:var(--clay);letter-spacing:.01em;}
+  .prod-body h3{font-size:18px;font-weight:600;}
+  .prod-body p{font-size:14px;color:var(--ink-soft);margin:0;flex:1;}
+  .prod-foot{display:flex;align-items:center;justify-content:space-between;margin-top:6px;}
+  .price{font-family:'Fraunces',serif;font-size:19px;font-weight:600;color:var(--ink);}
+  .order-btn{
+    font-size:13px;font-weight:700;color:var(--cobalt-deep);border:1px solid var(--line);
+    padding:9px 15px;border-radius:999px;background:var(--surface);cursor:pointer;transition:border-color .15s, color .15s;
+  }
+  .order-btn:hover{border-color:var(--cobalt-deep);}
+
+  /* ---------- wholesale ---------- */
+  .opt{background:var(--cobalt-deep);color:#fff;border-radius:var(--radius-m);overflow:hidden;}
+  .opt .wrap-inner{padding:54px 48px;display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;}
+  @media(max-width:860px){ .opt .wrap-inner{grid-template-columns:1fr;padding:40px 26px;} }
+  .opt h2{color:#fff;font-size:clamp(24px,3vw,32px);}
+  .opt p{color:#C9D3E1;margin-top:14px;font-size:15.5px;max-width:46ch;}
+  .opt-list{list-style:none;margin:26px 0 0;padding:0;display:flex;flex-direction:column;gap:12px;}
+  .opt-list li{display:flex;gap:10px;font-size:14.5px;color:#E7ECF3;align-items:flex-start;}
+  .opt-list svg{width:18px;height:18px;flex:none;margin-top:2px;stroke:var(--clay);fill:none;stroke-width:2;}
+  .opt-card{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:var(--radius-m);padding:28px;}
+  .opt-card strong{display:block;font-family:'Fraunces',serif;font-size:22px;margin-bottom:8px;}
+  .opt-card p{color:#C9D3E1;font-size:14px;margin-bottom:20px;}
+
+  /* ---------- reviews / trust ---------- */
+  .trust{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+  .trust div{padding:30px 24px;border-right:1px solid var(--line);}
+  .trust div:last-child{border-right:none;}
+  .trust strong{display:block;font-family:'Fraunces',serif;font-size:30px;color:var(--cobalt-deep);}
+  .trust span{font-size:13.5px;color:var(--ink-faint);}
+  @media(max-width:720px){ .trust{grid-template-columns:1fr 1fr;} .trust div{border-bottom:1px solid var(--line);} }
+
+  /* ---------- contacts ---------- */
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+  @media(max-width:860px){ .contact-grid{grid-template-columns:1fr;} }
+  .contact-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-m);padding:30px;}
+  .contact-card h3{font-size:16px;margin-bottom:16px;}
+  .info-row{display:flex;gap:14px;padding:12px 0;border-top:1px solid var(--line);}
+  .info-row:first-of-type{border-top:none;}
+  .info-row svg{width:19px;height:19px;flex:none;stroke:var(--cobalt-deep);fill:none;stroke-width:1.6;margin-top:2px;}
+  .info-row div p{margin:0;font-size:14.5px;}
+  .info-row div .label{font-size:12px;color:var(--ink-faint);margin-bottom:3px;}
+  .social-row{display:flex;gap:10px;margin-top:22px;}
+  .social-row a{
+    display:flex;align-items:center;gap:8px;border:1px solid var(--line);padding:10px 16px;border-radius:999px;
+    font-size:13.5px;font-weight:700;transition:border-color .15s;
+  }
+  .social-row a:hover{border-color:var(--cobalt-deep);}
+  .social-row svg{width:16px;height:16px;stroke:var(--cobalt-deep);fill:none;stroke-width:1.8;}
+  .map-note{background:var(--surface-warm);border:1px dashed var(--line);border-radius:var(--radius-s);padding:16px 18px;font-size:13px;color:var(--ink-faint);margin-top:18px;}
+
+  /* ---------- footer ---------- */
+  footer{border-top:1px solid var(--line);padding:34px 0;}
+  footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;}
+  footer p{font-size:13px;color:var(--ink-faint);margin:0;}
+
+  /* toast */
+  .toast{
+    position:fixed;bottom:24px;left:50%;transform:translate(-50%,20px);
+    background:var(--ink);color:#fff;padding:13px 22px;border-radius:999px;font-size:14px;font-weight:600;
+    opacity:0;pointer-events:none;transition:opacity .25s ease, transform .25s ease;z-index:100;
+  }
+  .toast.show{opacity:1;transform:translate(-50%,0);}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <div class="logo">
+      <svg class="mark" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="16" cy="16" r="14" stroke="#2C4A73" stroke-width="1.6"/>
+        <circle cx="16" cy="16" r="7" stroke="#BD5B2C" stroke-width="1.6"/>
+      </svg>
+      Посуда 15
+    </div>
+    <nav class="navlinks">
+      <a href="#catalog">Каталог</a>
+      <a href="#opt">Опт</a>
+      <a href="#about">О нас</a>
+      <a href="#contacts">Контакты</a>
+    </nav>
+    <div class="navcta">
+      <a class="phone-link" href="tel:+77075648409">+7 707 564-84-09</a>
+      <a class="btn btn-primary" href="https://wa.me/77075648409?text=Здравствуйте!%20Хочу%20узнать%20о%20посуде" target="_blank" rel="noopener">Написать в WhatsApp</a>
+      <button class="burger" id="burgerBtn" aria-label="Меню" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+  <div class="wrap mobile-menu" id="mobileMenu">
+    <a href="#catalog">Каталог</a>
+    <a href="#opt">Опт</a>
+    <a href="#about">О нас</a>
+    <a href="#contacts">Контакты</a>
+    <a href="tel:+77075648409">+7 707 564-84-09</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <div class="eyebrow-badge"><b>★ 4.3</b> — 69 оценок на 2ГИС</div>
+      <h1>Посуда для дома, кухни и вашего заведения</h1>
+      <p class="lead">Розница и опт в Петропавловске: тарелки, кружки, кастрюли, сковороды и всё для сервировки стола — под любой бюджет и повод.</p>
+      <div class="hero-ctas">
+        <a class="btn btn-clay" href="#catalog">Смотреть каталог</a>
+        <a class="btn btn-ghost" href="#contacts">Как нас найти</a>
+      </div>
+      <div class="hero-meta">
+        <div><strong>2</strong>филиала в городе</div>
+        <div><strong>23</strong>отзыва покупателей</div>
+        <div><strong>Опт</strong>для кафе и HoReCa</div>
+      </div>
+    </div>
+    <div class="plate-scene" aria-hidden="true">
+      <div class="plate p1"></div>
+      <div class="plate p2"></div>
+      <div class="plate p3"></div>
+    </div>
+  </div>
+</section>
+
+<section id="catalog">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="section-tag">Каталог</span>
+      <h2>Всё, что нужно для стола и кухни</h2>
+      <p>Выберите категорию — покажем подходящие товары ниже.</p>
+    </div>
+
+    <div class="cat-grid" id="catGrid">
+      <div class="cat-card active" data-cat="all">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/></svg>
+        <h3>Весь каталог</h3>
+        <p>Показать все категории</p>
+      </div>
+      <div class="cat-card" data-cat="plates">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4.5"/></svg>
+        <h3>Тарелки и сервировка</h3>
+        <p>Обеденные, суповые, наборы</p>
+      </div>
+      <div class="cat-card" data-cat="drinkware">
+        <svg viewBox="0 0 24 24"><path d="M5 4h11v9a5.5 5.5 0 0 1-11 0V4Z"/><path d="M16 7h1.5a2.5 2.5 0 0 1 0 5H16"/></svg>
+        <h3>Кружки и чашки</h3>
+        <p>Чайные пары, стаканы, термокружки</p>
+      </div>
+      <div class="cat-card" data-cat="cookware">
+        <svg viewBox="0 0 24 24"><ellipse cx="11" cy="10" rx="7" ry="3.4"/><path d="M4 10v3a7 3.4 0 0 0 14 0v-3"/><path d="M18 7h3"/></svg>
+        <h3>Кастрюли и сковороды</h3>
+        <p>Для плиты и духовки</p>
+      </div>
+      <div class="cat-card" data-cat="cutlery">
+        <svg viewBox="0 0 24 24"><path d="M7 3v7a2 2 0 0 0 4 0V3"/><path d="M9 10v11"/><path d="M16 3c-1.5 0-2 2-2 4s.5 4 2 4 2-2 2-4-.5-4-2-4Z"/><path d="M16 11v10"/></svg>
+        <h3>Столовые приборы</h3>
+        <p>Наборы вилок, ложек, ножей</p>
+      </div>
+      <div class="cat-card" data-cat="kitchen">
+        <svg viewBox="0 0 24 24"><rect x="3" y="9" width="18" height="4" rx="1"/><path d="M5 13v3a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-3"/></svg>
+        <h3>Кухонные принадлежности</h3>
+        <p>Доски, текстиль, органайзеры</p>
+      </div>
+    </div>
+
+    <div class="prod-grid" id="prodGrid" style="margin-top:40px;">
+
+      <div class="prod-card" data-cat="plates">
+        <div class="prod-visual"><svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="18"/><circle cx="24" cy="24" r="9"/></svg></div>
+        <div class="prod-body">
+          <span class="prod-cat">Тарелки</span>
+          <h3>Набор обеденных тарелок, 6 шт</h3>
+          <p>Фарфор, диаметр 25 см, классический белый кант.</p>
+          <div class="prod-foot"><span class="price">от 12 900 ₸</span><button class="order-btn" data-name="Набор обеденных тарелок, 6 шт">Заказать</button></div>
+        </div>
+      </div>
+
+      <div class="prod-card" data-cat="plates">
+        <div class="prod-visual"><svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="16"/><path d="M8 24a16 16 0 0 0 32 0"/></svg></div>
+        <div class="prod-body">
+          <span class="prod-cat">Сервировка</span>
+          <h3>Набор для сервировки на 4 персоны</h3>
+          <p>Тарелки, салатники и соусники в едином стиле.</p>
+          <div class="prod-foot"><span class="price">от 24 500 ₸</span><button class="order-btn" data-name="Набор для сервировки на 4 персоны">Заказать</button></div>
+        </div>
+      </div>
+
+      <div class="prod-card" data-cat="drinkware">
+        <div class="prod-visual"><svg viewBox="0 0 48 48"><path d="M12 8h20v18a10 10 0 0 1-20 0V8Z"/><path d="M32 14h4a5 5 0 0 1 0 10h-4"/></svg></div>
+        <div class="prod-body">
+          <span class="prod-cat">Кружки</span>
+          <h3>Чайная пара «Полевые цветы»</h3>
+          <p>Кружка 250 мл + блюдце, роспись под глазурью.</p>
+          <div class="prod-foot"><span class="price">от 4 200 ₸</span><button class="order-btn" data-name="Чайная пара «Полевые цветы»">Заказать</button></div>
+        </div>
+      </div>
+
+      <div class="prod-card" data-cat="drinkware">
+        <div class="prod-visual"><svg viewBox="0 0 48 48"><path d="M14 6h20l-2 30a4 4 0 0 1-4 4H20a4 4 0 0 1-4-4L14 6Z"/><path d="M12 6h24"/></svg></div>
+        <div class="prod-body">
+          <span class="prod-cat">Стаканы</span>
+          <h3>Набор стеклянных стаканов, 6 шт</h3>
+          <p>Толстое дно, объём 300 мл, для дома и кафе.</p>
+          <div class="prod-foot"><span class="price">от 6 800 ₸</span><button class="order-btn" data-name="Набор стеклянных стаканов, 6 шт">Заказать</button></div>
+        </div>
+      </div>
+
+      <div class="prod-card" data-cat="cookware">
+        <div class="prod-visual"><svg viewBox="0 0 48 48"><ellipse cx="22" cy="20" rx="14" ry="7"/><path d="M8 20v6a14 7 0 0 0 28 0v-6"/><path d="M36 14h7"/></svg></div>
+        <div class="prod-body">
+          <span class="prod-cat">Кастрюли</span>
+          <h3>Кастрюля с крышкой, 5 л</h3>
+          <p>Нержавеющая сталь, подходит для индукции.</p>
+          <div class="prod-foot"><span class="price">от 15 400 ₸</span><button class="order-btn" data-name="Кастрюля с крышкой, 5 л">Заказать</button></div>
+        </div>
+      </div>
+
+      <div class="prod-card" data-cat="cookware">
+        <div class="prod-visual"><svg viewBox="0 0 48 48"><circle cx="20" cy="22" r="13"/><path d="M32 18h9"/></svg></div>
+        <div class="prod-body">
+          <span class="prod-cat">Сковороды</span>
+          <h3>Сковорода с антипригарным покрытием, 26 см</h3>
+          <p>Съёмная ручка, подходит для духовки.</p>
+          <div class="prod-foot"><span class="price">от 9 900 ₸</span><button class="order-btn" data-name="Сковорода с антипригарным покрытием, 26 см">Заказать</button></div>
+        </div>
+      </div>
+
+      <div class="prod-card" data-cat="cutlery">
+        <div class="prod-visual"><svg viewBox="0 0 48 48"><path d="M16 6v14a4 4 0 0 0 8 0V6"/><path d="M20 20v22"/><path d="M32 6c-3 0-4 4-4 8s1 8 4 8 4-4 4-8-1-8-4-8Z"/><path d="M32 22v20"/></svg></div>
+        <div class="prod-body">
+          <span class="prod-cat">Приборы</span>
+          <h3>Набор столовых приборов, 24 предмета</h3>
+          <p>Нержавеющая сталь, на 6 персон, в подарочном кейсе.</p>
+          <div class="prod-foot"><span class="price">от 11 200 ₸</span><button class="order-btn" data-name="Набор столовых приборов, 24 предмета">Заказать</button></div>
+        </div>
+      </div>
+
+      <div class="prod-card" data-cat="kitchen">
+        <div class="prod-visual"><svg viewBox="0 0 48 48"><rect x="6" y="18" width="36" height="9" rx="2"/><path d="M10 27v6a4 4 0 0 0 4 4h20a4 4 0 0 0 4-4v-6"/></svg></div>
+        <div class="prod-body">
+          <span class="prod-cat">Кухня</span>
+          <h3>Разделочная доска бамбук, 3 шт</h3>
+          <p>Разного размера, с отверстием для подвеса.</p>
+          <div class="prod-foot"><span class="price">от 5 600 ₸</span><button class="order-btn" data-name="Разделочная доска бамбук, 3 шт">Заказать</button></div>
+        </div>
+      </div>
+
+      <div class="prod-card" data-cat="kitchen">
+        <div class="prod-visual"><svg viewBox="0 0 48 48"><rect x="10" y="6" width="28" height="36" rx="3"/><path d="M16 16h16M16 24h16M16 32h10"/></svg></div>
+        <div class="prod-body">
+          <span class="prod-cat">Кухня</span>
+          <h3>Кухонный текстиль, набор 5 шт</h3>
+          <p>Полотенца, прихватка и фартук в тон.</p>
+          <div class="prod-foot"><span class="price">от 6 100 ₸</span><button class="order-btn" data-name="Кухонный текстиль, набор 5 шт">Заказать</button></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="opt">
+  <div class="wrap">
+    <div class="opt">
+      <div class="wrap-inner">
+        <div>
+          <span class="section-tag" style="color:#E9AE83;">Для бизнеса</span>
+          <h2>Оптовые поставки для кафе, ресторанов и гостиниц</h2>
+          <p>Комплектуем заведения посудой под концепцию: от однотипных наборов для банкетов до подбора отдельных позиций на замену боя.</p>
+          <ul class="opt-list">
+            <li><svg viewBox="0 0 24 24"><path d="M5 12l5 5L19 7"/></svg>Гибкие цены при заказе от 50 единиц</li>
+            <li><svg viewBox="0 0 24 24"><path d="M5 12l5 5L19 7"/></svg>Подбор под интерьер и формат заведения</li>
+            <li><svg viewBox="0 0 24 24"><path d="M5 12l5 5L19 7"/></svg>Регулярные поставки на замену боя и списания</li>
+          </ul>
+        </div>
+        <div class="opt-card">
+          <strong>Рассчитаем заказ за 1 день</strong>
+          <p>Напишите, что нужно и на сколько персон — пришлём подборку и цену.</p>
+          <a class="btn btn-clay" href="https://wa.me/77075648409?text=Здравствуйте!%20Интересует%20оптовая%20поставка%20посуды%20для%20заведения" target="_blank" rel="noopener" style="width:100%;justify-content:center;">Обсудить в WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="section-tag">О магазине</span>
+      <h2>Посуда 15 — магазин посуды в Петропавловске</h2>
+      <p>Работаем в розницу и оптом: подбираем посуду для дома, подарков и заведений общепита.</p>
+    </div>
+  </div>
+  <div class="trust">
+    <div><strong>4.3</strong><span>рейтинг на 2ГИС</span></div>
+    <div><strong>69</strong><span>оценок покупателей</span></div>
+    <div><strong>23</strong><span>отзыва</span></div>
+    <div><strong>2</strong><span>филиала в городе</span></div>
+  </div>
+</section>
+
+<section id="contacts">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="section-tag">Контакты</span>
+      <h2>Приходите или пишите нам</h2>
+      <p>Ответим в WhatsApp или Instagram, поможем выбрать и посчитаем заказ.</p>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-card">
+        <h3>Магазин</h3>
+        <div class="info-row">
+          <svg viewBox="0 0 24 24"><path d="M12 21s-7-6.1-7-11.5A7 7 0 0 1 19 9.5C19 14.9 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.4"/></svg>
+          <div><p class="label">Адрес</p><p>Петропавловск, шоссе Кожаберген жырау, 2/1</p></div>
+        </div>
+        <div class="info-row">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg>
+          <div><p class="label">Режим работы</p><p>Ежедневно, откр. с 09:00 — время закрытия уточняйте по телефону</p></div>
+        </div>
+        <div class="info-row">
+          <svg viewBox="0 0 24 24"><path d="M4 5c0 8.3 6.7 15 15 15l3-3.6a1.5 1.5 0 0 0-.5-2.4l-3.7-1.7a1.5 1.5 0 0 0-1.7.4l-1.2 1.4a12 12 0 0 1-5.7-5.7l1.4-1.2a1.5 1.5 0 0 0 .4-1.7L9.3 2.5A1.5 1.5 0 0 0 6.9 2L4 5Z"/></svg>
+          <div><p class="label">Телефон</p><p><a href="tel:+77075648409">+7 707 564-84-09</a></p></div>
+        </div>
+        <div class="social-row">
+          <a href="https://wa.me/77075648409" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24"><path d="M4 20l1.4-4A8 8 0 1 1 9 19l-5 1Z"/></svg>WhatsApp
+          </a>
+          <a href="https://instagram.com/posuda__petropavl" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="4"/><circle cx="12" cy="12" r="3.4"/></svg>Instagram
+          </a>
+        </div>
+      </div>
+      <div class="contact-card">
+        <h3>Как добраться</h3>
+        <div class="info-row" style="border-top:none;">
+          <svg viewBox="0 0 24 24"><path d="M12 21s-7-6.1-7-11.5A7 7 0 0 1 19 9.5C19 14.9 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.4"/></svg>
+          <div><p class="label">Ориентир</p><p>Район Петропавловск городской администрации</p></div>
+        </div>
+        <a class="btn btn-primary" style="margin-top:16px;width:100%;justify-content:center;" href="https://2gis.kz/petropavlovsk/firm/70000001056019499?m=69.109055%2C54.84591%2F16" target="_blank" rel="noopener">Открыть на карте 2ГИС</a>
+        <div class="map-note">Полный адрес, схема проезда и фото входа — на странице заведения в 2ГИС.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="logo" style="font-size:17px;">
+      <svg class="mark" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:22px;height:22px;">
+        <circle cx="16" cy="16" r="14" stroke="#2C4A73" stroke-width="1.6"/>
+        <circle cx="16" cy="16" r="7" stroke="#BD5B2C" stroke-width="1.6"/>
+      </svg>
+      Посуда 15
+    </div>
+    <p>© 2026 Посуда 15, Петропавловск. Цены ознакомительные, актуальны на момент заказа.</p>
+  </div>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<script>
+  // mobile menu
+  const burger = document.getElementById('burgerBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+  burger.addEventListener('click', () => {
+    const open = mobileMenu.classList.toggle('open');
+    burger.setAttribute('aria-expanded', open);
+  });
+  mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    mobileMenu.classList.remove('open');
+    burger.setAttribute('aria-expanded', false);
+  }));
+
+  // category filter
+  const catCards = document.querySelectorAll('.cat-card');
+  const prodCards = document.querySelectorAll('.prod-card');
+  catCards.forEach(card => {
+    card.addEventListener('click', () => {
+      catCards.forEach(c => c.classList.remove('active'));
+      card.classList.add('active');
+      const cat = card.dataset.cat;
+      prodCards.forEach(p => {
+        p.hidden = !(cat === 'all' || p.dataset.cat === cat);
+      });
+    });
+  });
+
+  // order buttons -> whatsapp with product name
+  const toast = document.getElementById('toast');
+  document.querySelectorAll('.order-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const name = btn.dataset.name;
+      const text = encodeURIComponent(`Здравствуйте! Хочу заказать: ${name}`);
+      window.open(`https://wa.me/77075648409?text=${text}`, '_blank', 'noopener');
+      toast.textContent = `Открываем WhatsApp: ${name}`;
+      toast.classList.add('show');
+      clearTimeout(window.__t);
+      window.__t = setTimeout(() => toast.classList.remove('show'), 2600);
+    });
+  });
+</script>
+
+</body>
+</html>
